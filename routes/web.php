@@ -18,11 +18,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
 
 Route::get('test-admin', function () {
     return view('layouts.admin');
 
 });
+
+
