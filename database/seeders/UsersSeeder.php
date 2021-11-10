@@ -38,7 +38,7 @@ class UsersSeeder extends Seeder
         $member = new User;
         $member->name = "Member Larapus";
         $member->email = "member@gmail.com";
-        $member->password = bcrypt("rahasia");
+        $member->password = bcrypt("rahasia");  
         $member->save();
         $member->attachRole($memberRole);
 
